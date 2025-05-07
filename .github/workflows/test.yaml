@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: shakirshakiel/devbox-environments
-          ref: refs/head/main
+          ref: main
           path: secondary
 
       - name: Print branch name
