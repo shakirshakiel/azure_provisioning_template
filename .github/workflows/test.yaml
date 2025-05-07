@@ -1,0 +1,27 @@
+name: Test pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+      - README.md
+
+  workflow_dispatch:
+
+jobs:
+
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run hclfmt check
+        continue-on-error: false
+        uses: gruntwork-io/terragrunt-action@v2
+        with:
+          tg_version: "0.76.6"
+          tf_version: "1.11.3"
+          tg_command: "make hclfmt-check"
