@@ -35,6 +35,7 @@ jobs:
         run: |
           echo ${{ github.ref }}
           echo ${{ github.ref_name }}
+          echo ${{ github.workspace }}
 
       - name: List directories
         run: |
