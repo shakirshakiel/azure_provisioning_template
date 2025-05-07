@@ -18,10 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate TF docs
-        uses: terraform-docs/gh-actions@v1.4.0
+      - name: Checkout another codebase
+        uses: actions/checkout@v4
         with:
-          args: "--recursive-include-main=false"
-          recursive: true
-          recursive-path: modules/azure/infrastructure
-          fail-on-diff: true
+          name: shakirshakiel/devbox-environments
+          ref: refs/head/development
+
+      - name: Print branch name
+        run: "echo ${{ github.head_ref }}"
+
+      - name: List directories
+        run: "ls -l"        
