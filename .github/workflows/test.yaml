@@ -21,6 +21,5 @@ jobs:
       - name: Generate TF docs
         uses: terraform-docs/gh-actions@v1.4.0
         with:
-          working-dir: modules/
           recursive: true
           fail-on-diff: true
