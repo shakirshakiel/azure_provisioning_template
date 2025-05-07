@@ -14,7 +14,6 @@
 
 ## Modules
 
-No modules.
 
 ## Resources
 

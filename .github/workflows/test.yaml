@@ -18,16 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install terragrunt and terraform
-        continue-on-error: false
-        uses: gruntwork-io/terragrunt-action@v2
+      - name: Generate TF docs
+        uses: terraform-docs/gh-actions@v1.4.0
         with:
-          tg_version: "0.76.6"
-          tf_version: "1.11.3"
-          tg_command: "make hclfmt-check"
-      
-      - name: Check for basic formatting - terragrunt hclfmt
-        run: make hclfmt-check
-
-      - name: Check for basic formatting - terraform fmt
-        run: make fmt-check
+          working-dir: modules/
+          recursive: true
+          fail-on-diff: true
