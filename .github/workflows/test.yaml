@@ -21,7 +21,7 @@ jobs:
       - name: Generate TF docs
         uses: terraform-docs/gh-actions@v1.4.0
         with:
+          args: "--recursive-include-main=false"
           recursive: true
-          fail-on-diff: true
-          # working-dir: bootstrap
           recursive-path: modules/azure
+          fail-on-diff: true
