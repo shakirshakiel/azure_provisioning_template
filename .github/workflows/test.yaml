@@ -39,6 +39,10 @@ jobs:
       - name: List directories
         run: |
           ls -l
+        
+      - name: List directories from parent
+        run: |
+          ls -l
           ls -l main
           ls -l secondary
         working-directory: .
