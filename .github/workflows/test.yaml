@@ -23,7 +23,7 @@ jobs:
       - name: Checkout another codebase
         uses: actions/checkout@v4
         with:
-          repository: shakirshakiel/devbox-environments
+          repository: shakirshakiel/grafana-metrics-analyser
           ref: main
           path: secondary
 
@@ -31,4 +31,7 @@ jobs:
         run: "echo ${{ github.head_ref }}"
 
       - name: List directories
-        run: "ls -l"        
+        run: |
+          ls -l
+          ls -l main
+          ls -l secondary
