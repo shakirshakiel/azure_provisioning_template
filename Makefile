@@ -6,6 +6,7 @@ hclfmt: ## Format hcl files
 	@terragrunt hclfmt
 
 hclfmt-check: ## Check whether hcl files are formatted
+	@printf "Performing hclfmt-check on %s...\n" $(@D)
 	@terragrunt hclfmt --check
 
 fmt: $(addsuffix /fmt,$(azure_modules)) ## Format all tf files
