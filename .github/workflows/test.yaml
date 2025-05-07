@@ -17,12 +17,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: main
 
       - name: Checkout another codebase
         uses: actions/checkout@v4
         with:
-          name: shakirshakiel/devbox-environments
+          repository: shakirshakiel/devbox-environments
           ref: refs/head/main
+          path: secondary
 
       - name: Print branch name
         run: "echo ${{ github.head_ref }}"
