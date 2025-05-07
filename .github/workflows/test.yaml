@@ -23,5 +23,5 @@ jobs:
         with:
           args: "--recursive-include-main=false"
           recursive: true
-          recursive-path: modules/azure
+          recursive-path: modules/azure/infrastructure
           fail-on-diff: true
