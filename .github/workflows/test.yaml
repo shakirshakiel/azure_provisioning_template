@@ -24,6 +24,7 @@ jobs:
         with:
           tg_version: "0.76.6"
           tf_version: "1.11.3"
+          tg_command: "make hclfmt-check"
       
       - name: Check for basic formatting - terragrunt hclfmt
         run: make hclfmt-check
