@@ -23,4 +23,5 @@ jobs:
         with:
           recursive: true
           fail-on-diff: true
-          working-dir: ${{ github.workspace }}/modules/azure/
+          working-dir: bootstrap
+          recursive-path: modules/azure
