@@ -12,7 +12,7 @@ on:
 
 jobs:
 
-  ci:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           name: shakirshakiel/devbox-environments
-          ref: refs/head/development
+          ref: refs/head/main
 
       - name: Print branch name
         run: "echo ${{ github.head_ref }}"
