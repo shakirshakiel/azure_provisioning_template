@@ -1,0 +1,33 @@
+name: Test Failure flow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+      - README.md
+
+  workflow_dispatch:
+
+jobs:
+
+  failure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail this
+        run: |
+          echo "hi"
+          exit 1
+
+      - name: List directories
+        run: |
+          ls -l
+
+      - name: Run on failure
+        if: failure()
+        run: |
+          echo "Always run on failure"
