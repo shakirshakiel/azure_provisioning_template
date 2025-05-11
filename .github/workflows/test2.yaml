@@ -30,4 +30,4 @@ jobs:
       - name: Run on failure
         if: failure()
         run: |
-          echo "Always run on failure"
+          gh release list
