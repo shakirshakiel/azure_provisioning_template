@@ -31,3 +31,5 @@ jobs:
         if: failure()
         run: |
           gh release list
+        env:
+          GH_TOKEN: ${{ github.token }}
