@@ -1,7 +1,7 @@
 name: Env child
 
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
 
