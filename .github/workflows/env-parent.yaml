@@ -1,0 +1,22 @@
+name: Test Failure flow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+      - README.md
+
+  workflow_dispatch:
+env:
+  KEY1: value1
+  KEY2: value2
+
+jobs:
+
+  testenv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: ./.github/workflows/env-child.yaml

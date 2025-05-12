@@ -1,0 +1,14 @@
+name: Env child
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  failure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print env variables
+        run: |
+          env
