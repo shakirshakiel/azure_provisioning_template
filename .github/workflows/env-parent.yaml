@@ -9,6 +9,7 @@ on:
       - README.md
 
   workflow_dispatch:
+
 env:
   KEY1: value1
   KEY2: value2
@@ -16,7 +17,4 @@ env:
 jobs:
 
   envparent:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: ./.github/workflows/env-child.yaml
+    uses: ./.github/workflows/env-child.yaml
