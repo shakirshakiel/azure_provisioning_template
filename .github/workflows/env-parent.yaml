@@ -1,4 +1,4 @@
-name: Test Failure flow
+name: Env Parent
 
 on:
   push:
@@ -15,7 +15,7 @@ env:
 
 jobs:
 
-  testenv:
+  envparent:
     runs-on: ubuntu-latest
 
     steps:

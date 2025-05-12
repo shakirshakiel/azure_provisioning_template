@@ -5,7 +5,7 @@ on:
 
 jobs:
 
-  failure:
+  envchild:
     runs-on: ubuntu-latest
 
     steps:
