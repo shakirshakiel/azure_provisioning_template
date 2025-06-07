@@ -1,6 +1,9 @@
 {
-  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.14.2/.schema/devbox.schema.json",
-  "packages": ["tenv@4.6.2"],
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.14.2/.schema/devbox.schema.json",
+  "packages": [
+    "tenv@4.6.2",
+    "terraform-docs@latest"
+  ],
   "shell": {
     "init_hook": [
       "if ! tenv tf list | grep -q '1.5.0'; then tenv tf install 1.5.0; fi",
