@@ -1,0 +1,15 @@
+{
+  "$schema":  "https://raw.githubusercontent.com/jetify-com/devbox/0.14.2/.schema/devbox.schema.json",
+  "packages": ["tenv@4.6.2"],
+  "shell": {
+    "init_hook": [
+      "if ! tenv tf list | grep -q '1.5.0'; then tenv tf install 1.5.0; fi",
+      "if ! tenv tf list | grep -q '1.11.3'; then tenv tf install 1.11.3; fi"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}

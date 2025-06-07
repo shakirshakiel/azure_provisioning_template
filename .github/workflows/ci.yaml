@@ -23,12 +23,14 @@ jobs:
         uses: eLco/setup-terragrunt@v1
         with:
           terragrunt_version: "0.75.3"
-
-      - name: Install Terraform
+          
+      - name: Install tenv
         continue-on-error: false
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: "1.11.1"
+        run: |
+          curl -O -L "https://github.com/tofuutils/tenv/releases/latest/v4.6.2/tenv_v4.6.2_amd64.deb"
+          sudo dpkg -i "tenv_v4.6.2_amd64.deb"
+          tenv tf install 1.5.0
+          tenv tf install 1.11.3
 
       - name: Install tflint
         uses: terraform-linters/setup-tflint@v4
