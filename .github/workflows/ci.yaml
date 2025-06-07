@@ -27,7 +27,7 @@ jobs:
       - name: Install tenv
         continue-on-error: false
         run: |
-          curl -O -L "https://github.com/tofuutils/tenv/releases/latest/v4.6.2/tenv_v4.6.2_amd64.deb"
+          curl -O -L "https://github.com/tofuutils/tenv/releases/download/v4.6.2/tenv_v4.6.2_amd64.deb"
           sudo dpkg -i "tenv_v4.6.2_amd64.deb"
           tenv tf install 1.5.0
           tenv tf install 1.11.3
