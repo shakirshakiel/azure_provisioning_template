@@ -83,7 +83,7 @@ terratest/sites/southindia/vm/post:
 
 %/output: ## Run terragrunt output
 	@printf "Executing terragrunt %s...\n" $(@F)
-	@cd $(@D); terragrunt output -json | jq -r 'to_entries | .[] | "$(prefix)_" + (.key|ascii_upcase) + "=\"" + (.value.value|tostring) + "\""' | tee -a $(filepath)
+	@cd $(@D); terragrunt output -json | jq -r 'to_entries | .[] | "$(prefix)_" + (.key|ascii_upcase) + "=" + (.value.value|tostring)' | tee -a $(filepath)
 
 precommit: hclfmt fmt tfdocs ## Run all formatting before committing
 ci: hclfmt-check fmt-check tflint validate tfdocs-check checkov test ## Check if ci tasks are passing
