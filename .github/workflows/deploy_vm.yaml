@@ -61,7 +61,7 @@ jobs:
       - name: Run terragrunt output
         run: | 
           prefix="TEST" filepath="/tmp/.env" make sites/southindia/vm/output
-          cat $filepath >> $GITHUB_ENV
+          cat /tmp/.env >> $GITHUB_ENV
 
       - name: Check env variables
         run: |
