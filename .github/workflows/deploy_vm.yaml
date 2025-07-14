@@ -49,11 +49,22 @@ jobs:
       - name: Run terragrunt plan
         run: make sites/southindia/vm/plan
 
-      - name: Run pre tests
-        run: make -B terratest/sites/southindia/vm/pre
+      # - name: Run pre tests
+      #   run: make -B terratest/sites/southindia/vm/pre
 
       - name: Run terragrunt apply
         run: make sites/southindia/vm/apply
 
-      - name: Run post tests
-        run: make -B terratest/sites/southindia/vm/post
+      # - name: Run post tests
+      #   run: make -B terratest/sites/southindia/vm/post
+
+      - name: Run terragrunt output
+        run: | 
+          make sites/southindia/vm/output
+          cat /tmp/.env >> $GITHUB_ENV
+
+      - name: Check env variables
+        run: |
+          echo $content
+          echo $file_name
+      

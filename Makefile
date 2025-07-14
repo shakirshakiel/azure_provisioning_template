@@ -81,5 +81,9 @@ terratest/sites/southindia/vm/pre:
 terratest/sites/southindia/vm/post:
 	@cd terratest; go test -v ./sites/southindia/vm/post -timeout 90m;
 
+%/output: ## Run terragrunt output
+	@printf "Executing terragrunt %s...\n" $(@F)
+	@cd $(@D); terragrunt output -json | jq -r 'to_entries | .[] | .key + "=" + (.value.value|tostring)' > /tmp/.env
+
 precommit: hclfmt fmt tfdocs ## Run all formatting before committing
 ci: hclfmt-check fmt-check tflint validate tfdocs-check checkov test ## Check if ci tasks are passing
